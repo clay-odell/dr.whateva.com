@@ -18,7 +18,7 @@ const NavBar = () => {
                         <Nav.Link as={Link} to="/calendar">Calendar</Nav.Link>
                         <Nav.Link as={Link} to="/dates">Upcoming Shows</Nav.Link>
                         <Nav.Link as={Link} to="/request">Make A Request</Nav.Link>
-                        {/* <Nav.Link as={Link} to="/login">Login</Nav.Link> */}
+                        <Nav.Link as={Link} to="/admin">Admin Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

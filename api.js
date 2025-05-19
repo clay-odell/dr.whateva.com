@@ -9,19 +9,24 @@ const api = axios.create({
   },
 });
 
-// Get stored token from localStorage
-function getAuthToken() {
-  return localStorage.getItem("authToken");
-}
+// Add a request interceptor to include the token automatically
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 // Fetch all song requests (Requires authentication)
 export async function getRequests() {
   try {
-    const response = await api.get("/requests", {
-      headers: {
-        Authorization: `Bearer ${getAuthToken()}`,
-      },
-    });
+    const response = await api.get("/requests");
     return response.data.requests;
   } catch (error) {
     console.error("Error fetching requests:", error);
@@ -56,9 +61,6 @@ export async function getMailingListSubscriptions({ email, limit, offset } = {})
   try {
     const response = await api.get("/mailing-list/subscriptions", {
       params: { email, limit, offset },
-      headers: {
-        Authorization: `Bearer ${getAuthToken()}`,
-      },
     });
     return response.data.emails;
   } catch (error) {
@@ -72,9 +74,6 @@ export async function deleteRequest(id, adminPassword) {
   try {
     const response = await api.delete(`/requests/${id}`, {
       data: { password: adminPassword },
-      headers: {
-        Authorization: `Bearer ${getAuthToken()}`,
-      },
     });
     return response.data;
   } catch (error) {
