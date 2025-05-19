@@ -87,6 +87,13 @@ export async function deleteRequest(id, adminPassword) {
 export async function login(password) {
     try {
         const response = await api.post("auth/login", { password });
+        console.log("Login response status:", response.status);
+        console.log("Login response data:", response.data);
+
+        if (!response.data.token) {
+            console.warn("No token returned – check your credentials or backend implementation.");
+        }
+        
         localStorage.setItem("authToken", response.data.token);
         return response.data.token;
     } catch (error) {
@@ -94,6 +101,7 @@ export async function login(password) {
         throw error.response?.data || error;
     }
 }
+
 
 export default {
     getRequests,
