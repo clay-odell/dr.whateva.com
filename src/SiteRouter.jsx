@@ -6,6 +6,7 @@ import About from "./About";
 import Request from "./Request";
 import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
+import NotFound from "./NotFound";
 
 
 const SiteRouter = () => {
@@ -18,6 +19,7 @@ const SiteRouter = () => {
             <Route path="/request" element={<Request />} />
             <Route path="/admin" element={<Admin />}/>
             <Route path="/dashboard" element={<AdminDashboard />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     )
 };
