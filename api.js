@@ -86,7 +86,7 @@ export async function deleteRequest(id, adminPassword) {
 // Login to obtain JWT token
 export async function login(password) {
     try {
-        const response = await api.post("/login", { password });
+        const response = await api.post("auth/login", { password });
         localStorage.setItem("authToken", response.data.token);
         return response.data.token;
     } catch (error) {
