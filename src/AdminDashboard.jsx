@@ -39,7 +39,7 @@ const AdminDashboard = () => {
   return (
     <Container className="mt-5">
       <h2 className="text-center mb-4">Admin Dashboard</h2>
-      
+
       {error && <Alert variant="danger">{error}</Alert>}
 
       {/* Song Requests Table */}
@@ -51,9 +51,11 @@ const AdminDashboard = () => {
           <thead>
             <tr>
               <th>#</th>
-              <th>Song</th>
+              <th>Requester Name</th>
+              <th>Song Title</th>
               <th>Artist</th>
-              <th>Requester</th>
+              <th>Album/Version</th>
+              <th>Reason for Request</th>
             </tr>
           </thead>
           <tbody>
@@ -61,14 +63,18 @@ const AdminDashboard = () => {
               requests.map((req, index) => (
                 <tr key={req.id}>
                   <td>{index + 1}</td>
-                  <td>{req.song}</td>
+                  <td>{req.name}</td>
+                  <td>{req.song_title}</td>
                   <td>{req.artist}</td>
-                  <td>{req.requester}</td>
+                  <td>{req.album_or_version || "N/A"}</td>
+                  <td>{req.reason}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="text-center">No requests found</td>
+                <td colSpan="6" className="text-center">
+                  No requests found
+                </td>
               </tr>
             )}
           </tbody>
@@ -97,7 +103,9 @@ const AdminDashboard = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="2" className="text-center">No subscribers found</td>
+                <td colSpan="2" className="text-center">
+                  No subscribers found
+                </td>
               </tr>
             )}
           </tbody>
