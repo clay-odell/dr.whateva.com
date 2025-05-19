@@ -4,7 +4,7 @@ import UpcomingDates from "./UpcomingDates";
 import Calendar from "./Calendar";
 import About from "./About";
 import Request from "./Request";
-import Login from "./Login";
+// import Login from "./Login";
 
 const SiteRouter = () => {
     return (
@@ -14,7 +14,7 @@ const SiteRouter = () => {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/about" element={<About />} />
             <Route path="/request" element={<Request />} />
-            <Route path="/login" element={<Login />} />
+            {/* <Route path="/login" element={<Login />} /> */}
         </Routes>
     )
 };
