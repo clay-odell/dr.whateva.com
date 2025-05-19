@@ -5,7 +5,8 @@ import Calendar from "./Calendar";
 import About from "./About";
 import Request from "./Request";
 import Admin from "./Admin";
-// import Login from "./Login";
+import AdminDashboard from "./AdminDashboard";
+
 
 const SiteRouter = () => {
     return (
@@ -16,6 +17,7 @@ const SiteRouter = () => {
             <Route path="/about" element={<About />} />
             <Route path="/request" element={<Request />} />
             <Route path="/admin" element={<Admin />}/>
+            <Route path="/dashboard" element={<AdminDashboard />} />
         </Routes>
     )
 };
