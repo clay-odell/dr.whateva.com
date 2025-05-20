@@ -1,5 +1,6 @@
 [
     { "date": "2025-05-30", "venue": "The Camp", "time": "19:00-22:00" },
+    { "date": "2025-06-13", "venue": "Voodoo Lounge", "time": "22:00-01:00"}
     { "date": "2025-06-21", "venue": "The Stovehouse", "time": "19:00-22:00" },
     { "date": "2025-07-19", "venue": "The Stovehouse", "time": "19:00-22:00" },
     { "date": "2025-08-16", "venue": "Private Event", "time": "17:00-23:59" },
