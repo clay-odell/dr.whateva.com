@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getRequests, getMailingListSubscriptions } from "../api";
 import { Container, Table, Spinner, Alert } from "react-bootstrap";
+import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
   const [requests, setRequests] = useState([]);
