@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Aladin", system-ui;
 }
 
 .logo {
@@ -21,3 +22,5 @@
 #page-logo {
   height: 300px;
 }
+
+
