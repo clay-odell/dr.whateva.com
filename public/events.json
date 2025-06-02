@@ -3,8 +3,10 @@
     { "date": "2025-06-13", "venue": "Voodoo Lounge", "time": "22:00-23:59"},
     { "date": "2025-06-21", "venue": "The Stovehouse", "time": "19:00-22:00" },
     { "date": "2025-07-19", "venue": "The Stovehouse", "time": "19:00-22:00" },
+    { "date": "2025-08-09", "venue": "Chapman Pool", "time": "18:00-21:00"},
     { "date": "2025-08-16", "venue": "Private Event", "time": "17:00-23:59" },
     { "date": "2025-08-22", "venue": "The Stovehouse", "time": "19:00-22:00" },
     { "date": "2025-08-23", "venue": "The Lonegoose Saloon", "time": "21:00-01:00" }
+    
   ]
   
